@@ -32,7 +32,6 @@ var Quiz = new Vue({
   },
   methods: {
     changeProject: function () {
-
       this.value = 2
       console.log(this.value);
     }
