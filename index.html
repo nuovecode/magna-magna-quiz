@@ -3,14 +3,16 @@
     <head>
         <title>Magna magna Quiz</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <script src="vue.js"></script>
+        <script data-main="lib/main" src="js/require.js"></script>
+        <script src="js/vue.js"></script>
     </head>
     <body>
       <div class="container">
-        <div id="list">
-           <select v-for="item in items" @change="changeProject">
+
+        <div id="answers">
+           <select v-for="item in items" @change="selectAnswer">
               <option active>{{ item.question }}</option>
-              <option v-for="resp in item.response" v-bind:value="resp.value">{{ resp.text }}</option>
+              <option v-for="answer in item.answer" v-bind:value="answer.value">{{ answer.text }}</option>
            </select>
         </div>
 
