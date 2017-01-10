@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magna magna Quiz</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+      <div class="container">
+        <div id="list">
+           <select v-for="item in items" @change="changeProject">
+              <option active>{{ item.question }}</option>
+              <option v-for="resp in item.response" v-bind:value="resp.value">{{ resp.text }}</option>
+           </select>
+        </div>
+
+        <div id="response">
+           <p>{{ response }}</p>
+           <button v-on:click="displayResponse">Submit</button>
+         </div>
+
+      </div>
+    </body>
+</html>
+<script src="js/app.js"></script>
